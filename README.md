@@ -38,24 +38,24 @@ The first five files, you have. The Google News pretrained embeddings can be fou
 `https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit`
 
 2. `./logs` folder containing:
- - exp-1-training-2017-06-19_04-36-12
-   * `exp-1-2017-06-19_04-36-12-ep-4.ckpt-78000.meta`
-   * `exp-1-2017-06-19_04-36-12-ep-4.ckpt-78000.index`
-   * `exp-1-2017-06-19_04-36-12-ep-4.ckpt-78000.data-00000-of-00001`
- - exp-1-training-2017-06-27_13-41-06
-   * `exp-1-2017-06-27_13-41-06-ep-4.ckpt-100500.meta`
-   * `exp-1-2017-06-27_13-41-06-ep-4.ckpt-100500.index`
-   * `exp-1-2017-06-27_13-41-06-ep-4.ckpt-100500.data-00000-of-00001`
+   - exp-1-training-2017-06-19_04-36-12
+    * `exp-1-2017-06-19_04-36-12-ep-4.ckpt-78000.meta`
+    * `exp-1-2017-06-19_04-36-12-ep-4.ckpt-78000.index`
+    * `exp-1-2017-06-19_04-36-12-ep-4.ckpt-78000.data-00000-of-00001`
+   - exp-1-training-2017-06-27_13-41-06
+    * `exp-1-2017-06-27_13-41-06-ep-4.ckpt-100500.meta`
+    * `exp-1-2017-06-27_13-41-06-ep-4.ckpt-100500.index`
+    * `exp-1-2017-06-27_13-41-06-ep-4.ckpt-100500.data-00000-of-00001`
 
 3. `./pickled_vars` folder containing:
-  - index2word.p
-  - vocab.p
-  - word2index.p
+   - index2word.p
+   - vocab.p
+   - word2index.p
 
 4. `./word2vec` folder containing:
-  - word\_embeddings\_full\_200.word2vec
-  - word\_embeddings\_full\_200.word2vec.syn1neg.npy
-  - word\_embeddings\_full\_200.word2vec.wv.syn0.npy
+   - word\_embeddings\_full\_200.word2vec
+   - word\_embeddings\_full\_200.word2vec.syn1neg.npy
+   - word\_embeddings\_full\_200.word2vec.wv.syn0.npy
 
 The logs, pickled_vars and word2vec folders can be found here:
 `https://drive.google.com/open?id=0B2Cv2-ukPoJrTEt6SFhVQXFmSGM`
