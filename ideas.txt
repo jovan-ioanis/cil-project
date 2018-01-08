@@ -1,0 +1,100 @@
+Some sort of RNN/LSTM:
+
+
+      output
+         ^
+    downproject         This part is sort of unclear.
+         ^              Should we pool everything (max/average) or use only the
+      pooling           output of the last cell?
+ /    /         \
+h -> h -> ... -> h
+^    ^           ^
+w1   w2          wt
+
+Dealing with different-sized data:
+    Unroll to max length and pad the rest
+
+---------
+
+To answer the question above:
+
+Use a bidirectional LSTM:
+    The sentence is fed forwards and also backwards into two layers;
+    which don't interact. This produces two vectors, which are then combined
+    using a couple matrices:
+
+        final = W(h_f) + U(h_b)
+            where h_f and h_b are the final hidden states from the
+            forward and backward passes, respectively.
+
+Use attention:
+    every step of the output of the LSTM is weighted together, instead of just
+    using the last one; so you get a linear combination, where the parameters
+    are learnable.
+
+    Concretely:
+        Let H be the matrix where every column is one step of the LSTM
+        Then M := tanh(W * H)  with W some learnable matrix
+        a := softmax(w^T * M) the attention vector (w is also learnable)
+        r := H * a^T  -- the result of the LSTM layer
+
+        (this is not finished)
+
+---------
+
+Instead of using word embeddings and combining them, use sentence embeddings.
+Then feed those as-is, as features into whatever classifier we want
+
+    "Skip-thought vectors"[0]: requires continuous text, so probably not
+
+    "Paragraph vector"[1]: Similar to our current approach, but with
+        an additional vector for the paragraph.
+
+        When training, we predict the focus word given a context window AND
+        the paragraph ID/vector.
+
+        Then, at testing, we do the same but hold all parameters except the
+        paragraph vector fixed. This yields the new paragraph vector.
+
+        Note: can probably do simultaneous word/paragraph embedding learning;
+        initialize the word vectors with word2vec or random for OOV.
+
+        Downside: There are 2.5 million tweets, so 2.5 million x whatever the
+        dimension of our embeddings are, PLUS the word embeddings. That's a lot
+        of parameters.
+
+    "Learning Composition Models for Phrase Embeddings"[3] to investigate
+
+
+---------
+
+Instead of using word embeddings, use character embeddings.
+
+    Something like:
+
+      downproject
+           ^
+    recurrent layer
+    ^  ^  ^       ^
+    embedding matrix
+    ^  ^  ^       ^
+    c1 c2 c3 .... ct
+
+    This is essentially a tradeoff between number of parameters (there are only
+    a few characters, so the embedding dimension can be small, about 10) and the
+    unroll factor (140 here vs probably around 20 in the other case)
+
+
+---------
+
+Do some kind of labeled topic modelling (e.g. LLDA), where we only have two
+topics, positive and negative. This will yield an overall topic mixture for each
+tweet, plus word-topic assignments. These could be used as features for some
+other kind of algorithm.
+
+
+
+
+Citations:
+    [0] Skip-thought vectors
+    [1] Distributed representations of sentences and documents

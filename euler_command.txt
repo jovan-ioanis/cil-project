@@ -1,0 +1,1 @@
+bsub -N -n 4 -W 100:00 "python3 ac1d/main.py -n 4"
