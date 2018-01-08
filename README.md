@@ -39,13 +39,13 @@ The first five files, you have. The Google News pretrained embeddings can be fou
 
 2. `./logs` folder containing:
    - exp-1-training-2017-06-19_04-36-12
-    * `exp-1-2017-06-19_04-36-12-ep-4.ckpt-78000.meta`
-    * `exp-1-2017-06-19_04-36-12-ep-4.ckpt-78000.index`
-    * `exp-1-2017-06-19_04-36-12-ep-4.ckpt-78000.data-00000-of-00001`
+     * `exp-1-2017-06-19_04-36-12-ep-4.ckpt-78000.meta`
+     * `exp-1-2017-06-19_04-36-12-ep-4.ckpt-78000.index`
+     * `exp-1-2017-06-19_04-36-12-ep-4.ckpt-78000.data-00000-of-00001`
    - exp-1-training-2017-06-27_13-41-06
-    * `exp-1-2017-06-27_13-41-06-ep-4.ckpt-100500.meta`
-    * `exp-1-2017-06-27_13-41-06-ep-4.ckpt-100500.index`
-    * `exp-1-2017-06-27_13-41-06-ep-4.ckpt-100500.data-00000-of-00001`
+     * `exp-1-2017-06-27_13-41-06-ep-4.ckpt-100500.meta`
+     * `exp-1-2017-06-27_13-41-06-ep-4.ckpt-100500.index`
+     * `exp-1-2017-06-27_13-41-06-ep-4.ckpt-100500.data-00000-of-00001`
 
 3. `./pickled_vars` folder containing:
    - index2word.p
